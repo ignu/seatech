@@ -1,10 +1,19 @@
-api:
-  build: ./api
-  ports:
-    - "4000:4000"
-  environment:
-    - MIX_ENV=dev
-    - PORT=4000
-  volumes:
-    - ./api/:/app
-  command: mix phoenix.server
+version: '2'
+services:
+  api:
+    build: ./api
+    ports:
+      - "4000:4000"
+    environment:
+      MIX_ENV: dev
+      PORT: 4000
+      DATABASE_URL: postgres://postgres:@postgres/hammer_dev
+    depends_on:
+      - postgres
+    volumes:
+      - ./api/:/app
+    command: mix phoenix.server
+  postgres:
+    image: postgres:9.5
+    ports:
+      - "5432:5432"
