@@ -1,0 +1,10 @@
+api:
+  build: ./api
+  ports:
+    - "4000:4000"
+  environment:
+    - MIX_ENV=dev
+    - PORT=4000
+  volumes:
+    - ./api/:/app
+  command: mix phoenix.server
