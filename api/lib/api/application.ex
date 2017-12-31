@@ -1,5 +1,6 @@
 defmodule Api.Application do
   use Application
+  use HTTPoison.Base
 
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
