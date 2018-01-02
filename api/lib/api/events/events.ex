@@ -18,7 +18,7 @@ defmodule Api.Events do
 
   """
   def list_events do
-    Repo.all(Event)
+    Repo.all(from e in Event, order_by: e.date)
   end
 
   @doc """

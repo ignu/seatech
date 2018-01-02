@@ -14,5 +14,7 @@ defmodule Api.Repo.Migrations.CreateEvents do
 
       timestamps()
     end
+
+    create index("events", [:date])
   end
 end
