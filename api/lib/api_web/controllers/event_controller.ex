@@ -6,6 +6,10 @@ defmodule ApiWeb.EventController do
 
   def index(conn, _params) do
     events = Events.list_events()
+    events =
+      events
+      |> Enum.group_by(&(NaiveDateTime.to_date(&1.date)))
+      |> Enum.sort_by(fn ({a, _}) -> Date.to_iso8601(a) end)
     render(conn, "index.html", events: events)
   end
 

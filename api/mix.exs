@@ -41,6 +41,7 @@ defmodule Api.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:httpoison, "~> 0.13"},
       {:gettext, "~> 0.11"},
+      {:timex, "~> 3.0"},
       {:cowboy, "~> 1.0"}
     ]
   end

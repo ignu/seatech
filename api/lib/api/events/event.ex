@@ -19,7 +19,7 @@ defmodule Api.Events.Event do
   @doc false
   def changeset(%Event{} = event, attrs) do
     event
-    |> cast(attrs, [:name, :duration, :date, :rsvp, :link, :description])
+    |> cast(attrs, [:name, :duration, :date, :rsvp, :link, :description, :group_name])
     |> validate_required([:name, :description])
   end
 end
