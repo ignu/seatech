@@ -1,7 +1,7 @@
-defmodule Api.Event do
+defmodule Api.Events.Event do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Api.Event
+  alias Api.Events.Event
 
   schema "events" do
     field :date, :naive_datetime

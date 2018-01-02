@@ -2,7 +2,7 @@ defmodule Mix.Tasks.Fetch do
   alias __MODULE__
   use Mix.Task
   alias Api.Scrapers.Meetup
-  alias Api.Event
+  alias Api.Events.Event
   import Mix.Ecto
 
   def run(_args) do
@@ -18,7 +18,7 @@ defmodule Mix.Tasks.Fetch do
       "Docker-Seattle",
       "FSharpSeattle",
       "Ladies-in-Seattle-Tech",
-      "Learn-Code-Seattle"
+      "Learn-Code-Seattle",
       "Lisp-Seattle",
       "Metis-Seattle-Data-Science",
       "NET-Developers-Association-Eastside",
@@ -57,7 +57,7 @@ defmodule Mix.Tasks.Fetch do
       "seattlejshackers",
       "software_developer_study_group",
       "techinterviews",
-      "xcoders",
+      "xcoders"
     ] |> Enum.each(&load_group/1)
   end
 
