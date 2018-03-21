@@ -13,6 +13,19 @@ services:
     volumes:
       - ./api/:/app
     command: mix phx.server
+  client:
+    build: ./client
+    depends_on:
+      - api
+    environment:
+      API_BASE_URL: http://localhost:4000
+    image: node:7.8.0
+    volumes:
+      - ./client/:/app
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    command: yarn start
   postgres:
     image: postgres:9.5
     ports:

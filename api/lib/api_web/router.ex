@@ -19,9 +19,4 @@ defmodule ApiWeb.Router do
     get "/", PageController, :index
     resources "/events", EventController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ApiWeb do
-  #   pipe_through :api
-  # end
 end
