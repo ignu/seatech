@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const headers = {
-  "Content-Type": "application/json",
-  "Accept":"application/json",
-  "Access-Control-Allow-Origin": "*"
-}
-
-const results = fetch("http://localhost:4000/events",
-  {
-    headers,
-    mode: 'no-cors'
-  })
+const results = fetch("http://localhost:8080/events")
+  .then(r => r.json())
   .then(console.warn)
-
-console.log("🤔results", results);
 
 class App extends Component {
   render() {
